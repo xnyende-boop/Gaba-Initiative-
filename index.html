@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaba Initiative - Your Laptop, Your Livelihood</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .logo svg {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .video-player {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+        }
+
+        .video-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(102, 126, 234, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 25px solid white;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            margin-left: 5px;
+        }
+
+        /* Campaign Video Section */
+        .campaign-video {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            padding: 4rem 2rem;
+            color: white;
+        }
+
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+        }
+
+        .campaign-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .campaign-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .campaign-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .campaign-stat {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .campaign-stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Rural Images Gallery */
+        .rural-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 75%;
+            background: #e9ecef;
+        }
+
+        .gallery-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+        }
+
+        .gallery-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-caption {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        /* Problem Section */
+        .problem {
+            background: #f8f9fa;
+        }
+        
+        .problem-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .product-content {
+            padding: 2rem;
+        }
+        
+        .product-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .product-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 1rem 0;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .product-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: #667eea;
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+
+        .testimonial-content {
+            margin-top: 2rem;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .testimonial-info h4 {
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Impact Section */
+        .impact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .impact-item h3 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+            font-size: 1.8rem;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-window {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.2);
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-window.active {
+            display: flex;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .chatbot-message {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chatbot-message.bot {
+            justify-content: flex-start;
+        }
+
+        .chatbot-message.user {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: 0.75rem 1rem;
+            border-radius: 15px;
+            line-height: 1.4;
+        }
+
+        .chatbot-message.bot .message-bubble {
+            background: white;
+            color: #333;
+        }
+
+        .chatbot-message.user .message-bubble {
+            background: #667eea;
+            color: white;
+        }
+
+        .chatbot-options {
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .chatbot-option {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .chatbot-option:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .chatbot-input-area {
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        .chatbot-send {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .campaign-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chatbot-window {
+                width: 100%;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                height: 100%;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="25" width="60" height="40" rx="3" fill="#667eea"/>
+                        <path d="M10 65 L90 65 L95 75 L5 75 Z" fill="#764ba2"/>
+                        <path d="M50 35 L65 40 L65 45 L50 50 L35 45 L35 40 Z" fill="white"/>
+                        <rect x="48" y="50" width="4" height="8" fill="white"/>
+                        <path d="M70 45 L75 40 L80 45 M75 40 L75 55" stroke="#ffd700" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Gaba Initiative</div>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#products">Programs</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Your Laptop, Your Livelihood</h1>
+        <p>Own your future for just $10/month</p>
+        <div class="cta-buttons">
+            <a href="#products" class="btn btn-primary">Get Your Laptop</a>
+            <a href="#story" class="btn btn-secondary">Watch Our Story</a>
+        </div>
+    </section>
+
+    <!-- Story Video Section -->
+    <section class="video-section" id="story">
+        <h2 class="section-title">Amara's Story: From Dreams to Reality</h2>
+        <p class="section-subtitle">One laptop can change everything</p>
+        <div class="video-container">
+            <div class="video-player">
+                <div class="video-content">
+                    <div style="position: relative; width: 100%; height: 100%;">
+                        <div style="position: absolute; top: 10%; left: 5%; right: 5%; text-align: center; font-size: 1.2rem; line-height: 1.6;">
+                            <p style="margin-bottom: 2rem;">📖 <strong>AMARA'S JOURNEY</strong></p>
+                            <p style="font-size: 1rem; opacity: 0.9;">17-year-old Amara walks past an internet café...</p>
+                            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">$2/hour — she can't afford it</p>
+                            <p style="font-size: 1.1rem; margin-top: 2rem; color: #ffd700;">💔 Talent without tools = dreams deferred</p>
+                        </div>
+                        
+                        <div style="position: absolute; top: 45%; left: 5%; right: 5%; text-align: center;">
+                            <p style="font-size: 1rem; margin-bottom: 1rem;">Then Gaba Initiative arrives...</p>
+                            <p style="font-size: 1.3rem; font-weight: bold; color: #ffd700;">Her teacher announces the partnership</p>
+                            <p style="font-size: 1rem; margin-top: 1rem;">Amara receives a laptop for just <strong>$60</strong></p>
+                            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Payment plan: $10/month</p>
+                        </div>
+
+                        <div style="position: absolute; bottom: 10%; left: 5%; right: 5%; text-align: center;">
+                            <p style="font-size: 1.2rem; margin-bottom: 1rem;">🎨 She masters Canva • Designs her first logo</p>
+                            <p style="font-size: 1.4rem; font-weight: bold; color: #ffd700;">First client payment: $200</p>
+                            <p style="font-size: 1rem; margin-top: 1.5rem;">✨ <em>"For the cost of a school uniform,<br>own the tools to build your future"</em></p>
+                        </div>
+                    </div>
+                    <div class="play-button" onclick="alert('Video would play: Full story of Amara\'s transformation from unemployed student to earning $200+ through freelancing with her Gaba Initiative laptop.')"></div>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: #666;">
+            <strong>500,000 youth need laptops.</strong> Could you be next?
+        </p>
+    </section>
+
+    <!-- Rural Impact Gallery -->
+    <section>
+        <h2 class="section-title">Where We Work</h2>
+        <p class="section-subtitle">Bringing digital opportunity to rural communities</p>
+        <div class="rural-gallery">
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <div class="gallery-icon">🏫</div>
+                    <div class="gallery-caption">Rural School Computer Labs</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <div class="gallery-icon">👩‍🎓</div>
+                    <div class="gallery-caption">Students Learning Digital Skills</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <div class="gallery-icon">🌾</div>
+                    <div class="gallery-caption">Agricultural Communities</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <div class="gallery-icon">💻</div>
+                    <div class="gallery-caption">First Laptop Moment</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <div class="gallery-icon">☀️</div>
+                    <div class="gallery-caption">Solar-Powered Learning</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <div class="gallery-icon">🎯</div>
+                    <div class="gallery-caption">Youth Earning Income</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem">
+        <h2 class="section-title">The Digital Employment Gap</h2>
+        <p class="section-subtitle">Talent is universal. Opportunity is not.</p>
+        <div class="problem-stats">
+            <div class="stat-card">
+                <div class="stat-number">70%</div>
+                <div class="stat-label">Of youth lack basic digital skills</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15-20%</div>
+                <div class="stat-label">Youth unemployment in sub-Saharan Africa</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">97M</div>
+                <div class="stat-label">AI jobs being created globally</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.2B</div>
+                <div class="stat-label">People remain offline worldwide</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">Our Solutions</h2>
+        <p class="section-subtitle">Affordable technology + Practical training = Employable youth</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">💻</div>
+                <div class="product-content">
+                    <h3 class="product-title">Subsidized Laptops</h3>
+                    <div class="product-price">$50-$100</div>
+                    <p style="color: #999; margin-bottom: 1rem;">Market value: $200-$400</p>
+                    <ul class="product-features">
+                        <li>50-60% below retail price</li>
+                        <li>$10/month payment plans</li>
+                        <li>Government co-funding support</li>
+                        <li>Fully refurbished & tested</li>
+                        <li>Perfect for learning & freelancing</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🎓</div>
+                <div class="product-content">
+                    <h3 class="product-title">Digital Skills Bootcamps</h3>
+                    <div class="product-price">FREE</div>
+                    <p style="color: #999; margin-bottom: 1rem;">Advanced certs: $5-$10</p>
+                    <ul class="product-features">
+                        <li>3-month after-school programs</li>
+                        <li>AI tools & freelancing skills</li>
+                        <li>Local language instruction</li>
+                        <li>Ministry-certified curriculum</li>
+                        <li>60% job placement rate</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Enroll Today</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🏫</div>
+                <div class="product-content">
+                    <h3 class="product-title">School Lab Upgrades</h3>
+                    <div class="product-price">$0</div>
+                    <p style="color: #999; margin-bottom: 1rem;">Zero cost to schools</p>
+                    <ul class="product-features">
+                        <li>20-30 computer setup</li>
+                        <li>High-speed internet access</li>
+                        <li>Solar backup power</li>
+                        <li>Revenue-sharing model</li>
+                        <li>Ongoing tech support</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section
