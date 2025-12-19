@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable Laptops - Gaba Initiative</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🌍 Gaba Initiative</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="laptops.html">Laptops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero hero-small">
+        <div class="container">
+            <h1>Affordable Laptops for Students</h1>
+            <p class="lead">Own your laptop for as low as $10/month</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-5">Laptop Purchase Calculator</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="calculator">
+                        <h3>Calculate Your Monthly Payment</h3>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Select Your Country:</label>
+                            <select class="form-select" id="country">
+                                <option>Nigeria</option>
+                                <option>Kenya</option>
+                                <option>Ghana</option>
+                                <option>India</option>
+                                <option>Bangladesh</option>
+                                <option>Brazil</option>
+                                <option>Colombia</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="payment-plan" class="form-label">Payment Plan:</label>
+                            <select class="form-select" id="payment-plan" onchange="calculatePayment()">
+                                <option value="6">6 months</option>
+                                <option value="12">12 months</option>
+                                <option value="18">18 months</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subsidy" class="form-label">Government Subsidy Available:</label>
+                            <select class="form-select" id="subsidy" onchange="calculatePayment()">
+                                <option value="yes">Yes ($30-50 discount)</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="calculator-result" id="result">
+                            <strong>Your monthly payment: $10-17</strong><br>
+                            Total cost: $60-100
+                        </div>
+
+                        <a href="contact.html" class="btn btn-light btn-lg w-100 mt-3">Reserve Your Laptop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Available Laptop Options</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="spec-card">
+                        <div class="spec-header">
+                            <h3>Basic Package</h3>
+                            <div class="spec-price">$50-60</div>
+                            <p class="mb-0">With government subsidy</p>
+                        </div>
+                        <div class="spec-body">
+                            <ul>
+                                <li>Intel Core i3 or equivalent</li>
+                                <li>4GB RAM</li>
+                                <li>128GB Storage</li>
+                                <li>14" Display</li>
+                                <li>WiFi Enabled</li>
+                                <li>Windows 10/11 or Linux</li>
+                                <li>1 Year Warranty</li>
+                                <li>Free Training Included</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-gradient w-100 mt-3">Select This Package</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="spec-card">
+                        <div class="spec-header">
+                            <h3>Standard Package</h3>
+                            <div class="spec-price">$75-85</div>
+                            <p class="mb-0">With government subsidy</p>
+                        </div>
+                        <div class="spec-body">
+                            <ul>
+                                <li>Intel Core i5 or equivalent</li>
+                                <li>8GB RAM</li>
+                                <li>256GB SSD Storage</li>
+                                <li>15" Display</li>
+                                <li>WiFi & Bluetooth</li>
+                                <li>Windows 10/11</li>
+                                <li>1 Year Warranty</li>
+                                <li>Free Training + Software</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-gradient w-100 mt-3">Select This Package</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="spec-card">
+                        <div class="spec-header">
+                            <h3>Premium Package</h3>
+                            <div class="spec-price">$90-100</div>
+                            <p class="mb-0">With government subsidy</p>
+                        </div>
+                        <div class="spec-body">
+                            <ul>
+                                <li>Intel Core i7 or equivalent</li>
+                                <li>8GB-16GB RAM</li>
+                                <li>512GB SSD Storage</li>
+                                <li>15.6" Full HD Display</li>
+                                <li>WiFi 6 & Bluetooth</li>
+                                <li>Windows 11 Pro</li>
+                                <li>2 Year Warranty</li>
+                                <li>Premium Training Package</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-gradient w-100 mt-3">Select This Package</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-5">Payment Options</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">💳</div>
+                            <h3>Flexible Payment Plans</h3>
+                            <p>Choose from 6, 12, or 18-month payment plans. Pay as low as $10 per month.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🏛️</div>
+                            <h3>Government Subsidies</h3>
+                            <p>Eligible students receive $30-50 subsidy reducing total cost significantly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">💰</div>
+                            <h3>No Hidden Fees</h3>
+                            <p>Transparent pricing with no hidden costs. What you see is what you pay.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container text-center">
+            <h2 class="mb-3">Ready to Own Your Laptop?</h2>
+            <p class="lead text-muted mb-4">Start your journey to digital employment today</p>
+            <a href="contact.html" class="btn btn-gradient btn-lg">Reserve Your Laptop Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <h5>Gaba Initiative</h5>
+                    <p>Empowering youth through affordable technology and digital skills training.</p>
+                    <p class="mt-3">#YourLaptopYourLivelihood</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <a href="about.html">About Us</a>
+                    <a href="laptops.html">Laptop Calculator</a>
+                    <a href="success-stories.html">Success Stories</a>
+                    <a href="schools.html">School Partnerships</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Get Involved</h5>
+                    <a href="contact.html">Reserve a Laptop</a>
+                    <a href="schools.html">Become a Partner</a>
+                    <a href="contact.html">Sponsor a Student</a>
+                    <a href="contact.html">Corporate Sponsorship</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@digitalhubs.org</p>
+                    <p>Website: digitalhubs.org/schools</p>
+                    <p class="mb-0">Facebook | Instagram | LinkedIn | TikTok</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gaba Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function calculatePayment() {
+            const plan = document.getElementById('payment-plan').value;
+            const subsidy = document.getElementById('subsidy').value;
+            
+            let totalCost = subsidy === 'yes' ? 70 : 100;
+            let monthly = Math.round(totalCost / plan);
+            
+            document.getElementById('result').innerHTML = 
+                `<strong>Your monthly payment: $${monthly}</strong><br>Total cost: $${totalCost}`;
+        }
+    </script>
+</body>
+</html>
