@@ -4,208 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaba Initiative - Your Laptop, Your Livelihood</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DHCQQ0J5Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2DHCQQ0J5Q');
-</script>
+    <meta name="description" content="Affordable laptops and digital skills training for students in developing countries. Own your future for $10/month.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo-container">
-                <img src="/images/gaba.png" alt="Gaba Initiative Logo" width="70" height="70">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🌍 Gaba Initiative</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="laptops.html">Laptops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#products">Programs</a></li>
-                <li><a href="#testimonials">Success Stories</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <section class="hero" id="home">
-        <h1>Your Laptop, Your Livelihood</h1>
-        <p>Own your future for just $10/month</p>
-        <div class="cta-buttons">
-            <a href="#products" class="btn btn-primary">Get Your Laptop</a>
-            <a href="#story" class="btn btn-secondary">Watch Our Story</a>
+    <section class="hero">
+        <div class="container">
+            <h1>Your Laptop, Your Livelihood</h1>
+            <p class="lead">Own your future for just $10/month. Affordable laptops + digital skills training for students across developing countries.</p>
+            <a href="laptops.html" class="btn btn-hero me-2 mb-2">Reserve Your Laptop</a>
         </div>
     </section>
 
-    <!-- Story Video Section -->
-    <section class="video-section" id="story">
-        <h2 class="section-title">Amara's Story: From Dreams to Reality</h2>
-        <p class="section-subtitle">One laptop can change everything</p>
-        <div class="video-container">
-            <div class="video-player">
-                <div class="video-content">
-                    <!-- <div style="position: relative; width: 100%; height: 100%;">
-                        <div style="position: absolute; top: 10%; left: 5%; right: 5%; text-align: center; font-size: 1.2rem; line-height: 1.6;">
-                            <p style="margin-bottom: 2rem;">📖 <strong>AMARA'S JOURNEY</strong></p>
-                            <p style="font-size: 1rem; opacity: 0.9;">17-year-old Amara walks past an internet café...</p>
-                            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">$2/hour — she can't afford it</p>
-                            <p style="font-size: 1.1rem; margin-top: 2rem; color: #ffd700;">💔 Talent without tools = dreams deferred</p>
-                        </div>
-                        
-                        <div style="position: absolute; top: 45%; left: 5%; right: 5%; text-align: center;">
-                            <p style="font-size: 1rem; margin-bottom: 1rem;">Then Gaba Initiative arrives...</p>
-                            <p style="font-size: 1.3rem; font-weight: bold; color: #ffd700;">Her teacher announces the partnership</p>
-                            <p style="font-size: 1rem; margin-top: 1rem;">Amara receives a laptop for just <strong>$60</strong></p>
-                            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Payment plan: $10/month</p>
-                        </div>
+    <section class="bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+             <div class="col-md-6">
+                <div class="card border-0 shadow-sm">
+                    <video height="50%" controls>
+                        <source src="/image/vid.mp4" type="video/mp4">
+                        <source src="/image/vid.mp4" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-3">Our Story</h2>
+                <p class="lead text-muted">
+                    From one shared laptop to a movement transforming lives.
+                </p>
+                <p>
+                    Gaba Initiative was born from a simple but powerful realization: talent is everywhere,
+                    but opportunity is not. In many developing countries, students graduate with ambition
+                    and potential—yet without access to a computer, internet, or practical digital skills.
+                </p>
+                <p>
+                    What began as a small effort to provide refurbished laptops to students quickly evolved
+                    into a full ecosystem: affordable devices, flexible payment plans, and free digital
+                    skills training aligned with real employment opportunities.
+                </p>
+                <p>
+                    Today, Gaba Initiative partners with schools, governments, and organizations to help
+                    young people turn access to technology into income, independence, and dignity.
+                </p>
+            </div>
 
-                        <div style="position: absolute; bottom: 10%; left: 5%; right: 5%; text-align: center;">
-                            <p style="font-size: 1.2rem; margin-bottom: 1rem;">🎨 She masters Canva • Designs her first logo</p>
-                            <p style="font-size: 1.4rem; font-weight: bold; color: #ffd700;">First client payment: $200</p>
-                            <p style="font-size: 1rem; margin-top: 1.5rem;">✨ <em>"For the cost of a school uniform,<br>own the tools to build your future"</em></p>
+           
+
+        </div>
+    </div>
+</section>
+
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-4">Our Impact</h2>
+                    <p class="text-center text-muted mb-4">Empowering youth with technology and digital skills to break barriers to employment.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">$50-100</div>
+                        <div class="stat-label">Subsidized Laptop Cost</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">Employment Rate</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">$200-500</div>
+                        <div class="stat-label">Monthly Earnings</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">3 Months</div>
+                        <div class="stat-label">Free Training</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-2">Breaking Barriers to Digital Employment</h2>
+            <p class="text-center text-muted mb-5">70% of youth in developing countries lack access to computers. We're changing that.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon">💻</div>
+                            <h3>Subsidized Laptops</h3>
+                            <p>Quality refurbished laptops at $50-100 with government co-funding. Payment plans available starting at $10/month.</p>
+                            <a href="laptops.html" class="text-decoration-none">Learn more →</a>
                         </div>
                     </div>
-                    <div class="play-button" onclick="alert('Video would play: Full story of Amara\'s transformation from unemployed student to earning $200+ through freelancing with her Gaba Initiative laptop.')"></div> -->
-                <video width="100%" height="240" controls>
-                    <source src="/images/video.mp4" type="video/mp4">
-                    <source src="/images/video.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon">🎓</div>
+                            <h3>Free Digital Training</h3>
+                            <p>3-month bootcamps teaching AI tools, freelancing skills, and soft skills. Curriculum certified by education ministries.</p>
+                            <a href="about.html" class="text-decoration-none">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon">🌐</div>
+                            <h3>School Digital Hubs</h3>
+                            <p>Upgraded computer labs with high-speed internet and solar backup in schools across sub-Saharan Africa, South Asia, and Latin America.</p>
+                            <a href="schools.html" class="text-decoration-none">Learn more →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: #666;">
-            <strong>500,000 youth need laptops.</strong> Could you be next?
-        </p>
     </section>
 
-    <!-- Rural Impact Gallery -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">The Problem We're Solving</h2>
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="text-primary">Youth Unemployment Crisis</h3>
+                    <ul class="mt-3">
+                        <li><strong>12.8% global youth unemployment</strong> (15-20% in sub-Saharan Africa)</li>
+                        <li><strong>70% of low-income youth</strong> lack basic digital skills</li>
+                        <li><strong>2.2 billion people</strong> remain offline worldwide</li>
+                        <li><strong>97 million AI-related jobs</strong> expected by 2025, but most youth can't access them</li>
+                        <li><strong>70% of students</strong> in developing countries have no computer access until age 14</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section>
-        <h2 class="section-title">Where We Work</h2>
-        <p class="section-subtitle">Bringing digital opportunity to rural communities</p>
-        <div class="rural-gallery">
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <div class="gallery-icon">🏫</div>
-                    <div class="gallery-caption">Rural School Computer Labs</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <div class="gallery-icon">👩‍🎓</div>
-                    <div class="gallery-caption">Students Learning Digital Skills</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <div class="gallery-icon">🌾</div>
-                    <div class="gallery-caption">Agricultural Communities</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <div class="gallery-icon">💻</div>
-                    <div class="gallery-caption">First Laptop Moment</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <div class="gallery-icon">☀️</div>
-                    <div class="gallery-caption">Solar-Powered Learning</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <div class="gallery-icon">🎯</div>
-                    <div class="gallery-caption">Youth Earning Income</div>
-                </div>
-            </div>
+        <div class="container text-center">
+            <h2 class="mb-3">Ready to Transform Your Future?</h2>
+            <p class="lead text-muted mb-4">Join thousands of students building careers in the digital economy</p>
+            <a href="contact.html" class="btn btn-gradient btn-lg me-2 mb-2">Get Started Today</a>
+            <a href="success-stories.html" class="btn btn-outline-primary btn-lg mb-2">Read Success Stories</a>
         </div>
     </section>
 
-    <section class="problem">
-        <h2 class="section-title">The Digital Employment Gap</h2>
-        <p class="section-subtitle">Talent is universal. Opportunity is not.</p>
-        <div class="problem-stats">
-            <div class="stat-card">
-                <div class="stat-number">70%</div>
-                <div class="stat-label">Of youth lack basic digital skills</div>
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <h5>Gaba Initiative</h5>
+                    <p>Empowering youth through affordable technology and digital skills training.</p>
+                    <p class="mt-3">#YourLaptopYourLivelihood</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <a href="about.html">About Us</a>
+                    <a href="laptops.html">Laptop Calculator</a>
+                    <a href="success-stories.html">Success Stories</a>
+                    <a href="schools.html">School Partnerships</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Get Involved</h5>
+                    <a href="contact.html">Reserve a Laptop</a>
+                    <a href="schools.html">Become a Partner</a>
+                    <a href="contact.html">Sponsor a Student</a>
+                    <a href="contact.html">Corporate Sponsorship</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@digitalhubs.org</p>
+                    <p>Website: digitalhubs.org/schools</p>
+                    <p class="mb-0">Facebook | Instagram | LinkedIn | TikTok</p>
+                </div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">15-20%</div>
-                <div class="stat-label">Youth unemployment in sub-Saharan Africa</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">97M</div>
-                <div class="stat-label">AI jobs being created globally</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">2.2B</div>
-                <div class="stat-label">People remain offline worldwide</div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gaba Initiative. All rights reserved.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <section id="products">
-        <h2 class="section-title">Our Solutions</h2>
-        <p class="section-subtitle">Affordable technology + Practical training = Employable youth</p>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon">💻</div>
-                <div class="product-content">
-                    <h3 class="product-title">Subsidized Laptops</h3>
-                    <div class="product-price">$50-$100</div>
-                    <p style="color: #999; margin-bottom: 1rem;">Market value: $200-$400</p>
-                    <ul class="product-features">
-                        <li>50-60% below retail price</li>
-                        <li>$10/month payment plans</li>
-                        <li>Government co-funding support</li>
-                        <li>Fully refurbished & tested</li>
-                        <li>Perfect for learning & freelancing</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Apply Now</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-icon">🎓</div>
-                <div class="product-content">
-                    <h3 class="product-title">Digital Skills Bootcamps</h3>
-                    <div class="product-price">FREE</div>
-                    <p style="color: #999; margin-bottom: 1rem;">Advanced certs: $5-$10</p>
-                    <ul class="product-features">
-                        <li>3-month after-school programs</li>
-                        <li>AI tools & freelancing skills</li>
-                        <li>Local language instruction</li>
-                        <li>Ministry-certified curriculum</li>
-                        <li>60% job placement rate</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Enroll Today</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-icon">🏫</div>
-                <div class="product-content">
-                    <h3 class="product-title">School Lab Upgrades</h3>
-                    <div class="product-price">$0</div>
-                    <p style="color: #999; margin-bottom: 1rem;">Zero cost to schools</p>
-                    <ul class="product-features">
-                        <li>20-30 computer setup</li>
-                        <li>High-speed internet access</li>
-                        <li>Solar backup power</li>
-                        <li>Revenue-sharing model</li>
-                        <li>Ongoing tech support</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Partner With Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
